@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Profiler } from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import Logon  from './pages/Logon';
 import Register from './pages/Register';
+import Profile from './pages/Profile';
 
 export default function Routes () {
     return(
@@ -10,7 +11,7 @@ export default function Routes () {
             <Switch>
                 <Route path="/" exact component={Logon} />
                 <Route path="/cadastro" component={Register} />
-
+                <Route path="/perfil" component={Profile} />
             </Switch>
         </BrowserRouter>
     );
