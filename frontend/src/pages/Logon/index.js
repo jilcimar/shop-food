@@ -15,8 +15,9 @@ export default function Logon () {
                 <form>
                     <h1>Faça seu login</h1>
                      <input placeholder="Sua ID" />
-                     <button className="button" type="submit">Entrar</button>
-
+                     <Link  to="/perfil">
+                        <button className="button" type="submit">Entrar</button>
+                    </Link>
                         <Link className="back-link" to="/cadastro">
                             <FiLogIn size={16} color="#E02041"/>
                             Não tenho cadastro
@@ -24,7 +25,7 @@ export default function Logon () {
                 </form>
             </section>
 
-            <img src={bannerImg} alt = "Banner Home" />
+            <img className="banner" src={bannerImg} alt = "Banner Home" />
         </div>
     );
 }

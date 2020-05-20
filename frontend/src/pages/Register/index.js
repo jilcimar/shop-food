@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {FiArrowLeft} from 'react-icons/fi';
 
-
+import api from '../../services/api';
 import './styles.css';
 import logoImg from '../../assets/logo.svg'
     
@@ -18,7 +18,7 @@ export default function Register () {
                     <Link className="back-link" to="/">
                             <FiArrowLeft size={16} color="#E02041"/>
                             Não tenho cadastro
-                        </Link>
+                    </Link>
                 </section>
                 <form>
                     <input type="text" placeholder="Nome do estabelecimento" />

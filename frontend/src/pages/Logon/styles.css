@@ -15,10 +15,19 @@
     margin-right: 30px;
 }
 .logon-container section.form form{
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 .logon-container section.form form h1 {
     font-size: 32px;
     margin-bottom: 32px;
+}
+
+img {
+    margin-top: 10px;
+}
+
+.banner {
+    max-width: 500px;
+    margin-right: 60px;
 }

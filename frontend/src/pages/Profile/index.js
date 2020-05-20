@@ -4,15 +4,15 @@ import {FiPower, FiTrash2} from 'react-icons/fi';
 
 
 import './styles.css';
-import logoImg from '../../assets/logo.svg'
+import logoImg from '../../assets/logo-small.svg'
     
 export default function Profiler(){
     return(
         <div className="profile-container">
             <header>
                 <img src={logoImg} alt = "Logo" />
-                <span>Bem vindo a Lanchonete</span>
-                <Link className="button" to="/produtos/novo">Divulgar novo produto</Link>
+                <span>Bem vindo a Shop Food</span>
+                <Link className="button" to="/produto/novo">Divulgar novo produto</Link>
                 <button type="button">
                     <FiPower size={18} color="#E02041"> </FiPower>
                 </button>
