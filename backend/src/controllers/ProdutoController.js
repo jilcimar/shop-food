@@ -45,7 +45,7 @@ module.exports  = {
         .select('estabelecimento_id')
         .first();
 
-        console.log(produto);
+        console.log(produto, produto.estabelecimento_id);
 
         if(produto.estabelecimento_id != estabelecimento_id) {
             return response.status(401).json({
