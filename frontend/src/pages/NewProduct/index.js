@@ -1,11 +1,43 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, {useState} from 'react';
+import {Link, useHistory} from 'react-router-dom';
 import {FiArrowLeft} from 'react-icons/fi';
+
+import api from '../../services/api';
 
 import './styles.css';
 import logoImg from '../../assets/logo-small.svg'
     
 export default function NewProduct(){
+
+    const [name, setName] = useState('');
+    const [descricao, setDescricacao] = useState('');
+    const [value, setValue] = useState('');
+
+    const history  = useHistory();
+
+    const estabelecimentoId = localStorage.getItem('estabelecimentoId');
+
+    async function newProduct (e) {
+        e.preventDefault();
+        const data = {
+            name,
+            descricao,
+            value,
+        };
+
+        try {
+            await api.post('/produtos', data, {
+                headers: {
+                    Authorization: estabelecimentoId,
+                }
+            });
+
+            history.push('/perfil');
+        } catch (error) {
+            alert('Erro ao cadastrar produto, tente de novo');
+        }
+    }
+
     return (
         <div className="new-product-container">
         <div className="content">
@@ -19,10 +51,19 @@ export default function NewProduct(){
                 </Link>
             </section>
             <form>
-                <input type="text" placeholder="Nome do produto" />
-                <textarea type="text" placeholder="Descrição do item" />
-                <input placeholder="Valor em reais"/>
-                <button className="button" type="submit">Cadastrar</button>
+                <input type="text" 
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                    placeholder="Nome do produto" />
+                <textarea type="text" 
+                    value={descricao}
+                    onChange={e => setDescricacao(e.target.value)}
+                    placeholder="Descrição do item" />
+                <input 
+                    value={value}
+                    onChange={e => setValue(e.target.value)}
+                    placeholder="Valor em reais"/>
+                <button onClick={newProduct} className="button" type="submit">Cadastrar</button>
             </form>
         </div>
     </div>

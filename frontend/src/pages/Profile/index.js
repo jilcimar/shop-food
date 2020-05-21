@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import {FiPower, FiTrash2} from 'react-icons/fi';
 
 
@@ -10,6 +10,8 @@ import api from '../../services/api';
 export default function Profiler(){
 
     const [produtos, setProdutos] = useState([]);
+
+    const history = useHistory();
 
     const estabelecimentoNome = localStorage.getItem('estabelecimentoName');
     const estabelecimentoId = localStorage.getItem('estabelecimentoId');
@@ -26,17 +28,24 @@ export default function Profiler(){
 
     async function handleDeleteProduct (id) {
         try {
-            await api.get(`produtos/${id}`,
-             {
+            await api.delete(`produtos/${id}`,
+            {
                 headers: {
                     Authorization: estabelecimentoId,
                 }
             });
 
-            console.log(estabelecimentoId);
+            //Removendo da interface o item deletado
+            setProdutos(produtos.filter(produto => produto.id !== id));
         } catch (error) {
-            alert('Errro ao deletar o produto');
+            alert('Errro ao deletar o produto: ' + id);
         }
+    }
+
+    function handleLogout() {
+        localStorage.clear();
+
+        history.push('/');
     }
 
     return(
@@ -45,7 +54,7 @@ export default function Profiler(){
                 <img src={logoImg} alt = "Logo" />
                 <span>Bem vindo(a), {estabelecimentoNome}</span>
                 <Link className="button" to="/produto/novo">Divulgar novo produto</Link>
-                <button type="button">
+                <button onClick={handleLogout} type="button">
                     <FiPower size={18} color="#E02041"> </FiPower>
                 </button>
             </header>

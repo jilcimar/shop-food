@@ -55,6 +55,6 @@ module.exports  = {
 
         await connection('produtos').where('id', id).delete();
 
-        return response.status(204).send();
+        return response.status(200).send();
     }
 };
