@@ -9,6 +9,10 @@
 
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/jilcimar/shop-food?color=%23EE4D64">
+
+  <img alt="Issues" src="http://isitmaintained.com/badge/resolution/jilcimar/shop-food.svg">
+
+  <img alt="Issues resolvidas" src="http://isitmaintained.com/badge/resolution/jilcimar/shop-food.svg">
 </p>
 
 <p align="center">
