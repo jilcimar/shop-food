@@ -8,7 +8,7 @@
 
 
 <p align="center">
-  <!-- <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/LauraBeatris/gympoint-mobile?color=%23EE4D64"> -->
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/jilcimar/shop-food?color=%23EE4D64">
 </p>
 
 <p align="center">
