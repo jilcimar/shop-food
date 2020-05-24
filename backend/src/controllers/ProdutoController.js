@@ -26,7 +26,6 @@ module.exports  = {
         .offset((page-1)*5)
         .select([
             'produtos.*', 
-            'estabelecimentos.name',
             'estabelecimentos.whatsapp',
             'estabelecimentos.city',
             'estabelecimentos.uf']);
