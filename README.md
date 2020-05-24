@@ -40,5 +40,5 @@
     // 3 - npm start or yarn start
 ```
 
-## :construction: Testing 
-Soon.
+## :construction: Em construção 
+Em breve.
